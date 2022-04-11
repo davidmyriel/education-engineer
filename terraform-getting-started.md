@@ -5,6 +5,14 @@ With Terraform you can manage infrastructure using configuration files rather th
 
 This tutorial teaches you how to install Terraform and write your own infrastructure configuration to build and delete an NGINX server using Docker. 
 
+## Prerequisites
+
+To follow this tutorial you will need:
+
+- Terminal on OS X
+- code editor (e.g. [Visual Studio Code](https://code.visualstudio.com/download))
+- [Docker Desktop for Mac](https://docs.docker.com/desktop/mac/install/)
+
 ## Install Terraform
 
 To install Terraform, find the [appropriate package](https://www.terraform.io/downloads.html) for your system and download it as a zip archive. 
@@ -173,3 +181,13 @@ docker_image.nginx: Destruction complete after 0s
 
 Destroy complete! Resources: 2 destroyed.
 ```
+## Next Steps
+
+You've provisioned and destroyed an NGINX webserver with Terraform. The resource configuration created in this tutorial lets you version, reuse, and share the webserver provisioning workflow. You can use Terraform to manage your infrastructure in a consistent and a repeatable way.
+
+Now that you are familiar with the core concepts of infrastructure as code and Terraform, you are ready to write your own infrastructure configuration. Next, you will create real infrastructure in the cloud of your choice.
+
+- [Amazon Web Services (AWS)](https://learn.hashicorp.com/tutorials/terraform/aws-build)
+- [Azure](https://learn.hashicorp.com/tutorials/terraform/azure-build)
+- [Google Cloud Platform (GCP)](https://learn.hashicorp.com/tutorials/terraform/google-cloud-platform-build)
+- [Oracle Cloud Platform (OCI)](https://learn.hashicorp.com/tutorials/terraform/oci-build)
