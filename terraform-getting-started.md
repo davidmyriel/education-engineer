@@ -140,6 +140,10 @@ docker_container.nginx: Creation complete after 0s [id=ceda9233cc50d666ce4ea00ca
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 ```
 
+Verify the existence of the NGINX container by visiting [localhost:80](localhost:80) in your web browser.
+
+![nginx](https://mktg-content-api-hashicorp.vercel.app/api/assets?product=tutorials&version=main&asset=public%2Fimg%2Fterraform%2Fgetting-started%2Fterraform-docker-nginx.png)
+
 ## Destroy infrastructure
 
 To destroy the provisioned NGINX container, run `terraform destroy`. This command is the inverse of `terraform apply` in that it terminates all the resources specified in your Terraform state. 
