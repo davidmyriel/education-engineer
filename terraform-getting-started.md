@@ -1,6 +1,9 @@
 # Getting Started with Terraform
 
-Terraform is the most popular language for defining and provisioning infrastructure as code (IaC).
+Terraform is an open-source infrastructure as code (IaC) tool that enables you to safely and predictably create, change, and improve infrastructure. 
+With Terraform you can manage infrastructure using configuration files rather than through a graphical user interface. 
+
+This tutorial teaches you how to install Terraform and write your own infrastructure configuration to build and delete an NGINX server using Docker. 
 
 ## Install Terraform
 
@@ -8,22 +11,28 @@ To install Terraform, simply visit [Terraform.io](https://www.terraform.io/downl
 
 ## Build infrastructure
 
-With Terraform installed, let's dive right into it and start creating some infrastructure.
+Now that you have installed Terraform, you can provision an NGINX server in less than a minute using Docker on Mac. 
 
-Most guys find it easiest to create a new directory on there local machine and create Terraform configuration code inside it.
+After you install Docker on your local machine, start Docker Desktop.
+
+```shell
+$ open -a Docker
+```
+
+You need to store Terraform configuration code locally. Create a new directory on your local machine and navigate to it.
 
 ```shell
 $ mkdir terraform-demo
 $ cd terraform-demo
 ```
 
-Next, create a file for your Terraform configuration code.
+Create the `main.tf` file for your Terraform configuration code.
 
 ```shell
 $ touch main.tf
 ```
 
-Paste the following lines into the file.
+Paste the following lines into the file and save your changes.
 
 ```hcl
 terraform {
@@ -49,26 +58,27 @@ resource "docker_image" "nginx" {
 }
 ```
 
-Initialize Terraform with the `init` command. The AWS provider will be installed. 
+Initialize the project, which downloads a plugin that allows Terraform to interact with Docker.
 
 ```shell
 $ terraform init
 ```
 
-You should check for any errors. If it ran successfully, provision the resource with the `apply` command.
+If there are no errors, provision the NGINX server container with `terraform apply`. 
 
 ```shell
 $ terraform apply
 ```
 
+When Terraform asks you to confirm, type `yes` and press `ENTER`.
 The command will take up to a few minutes to run and will display a message indicating that the resource was created.
 
 ## Destroy infrastructure
 
-Finally, destroy the infrastructure.
+To destroy the provisioned NGINX container, run `terraform destroy`. This command is the inverse of `terraform apply` in that it terminates all the resources specified in your Terraform state. 
 
 ```shell
 $ terraform destroy
 ```
 
-Look for a message at the bottom of the output asking for confirmation. Type `yes` and hit ENTER. Terraform will destroy the resources it had created earlier.
+When Terraform asks you to confirm, type `yes` and press `ENTER`. Terraform will now destroy the resources it had created earlier.
