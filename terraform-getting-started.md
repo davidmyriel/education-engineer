@@ -7,7 +7,32 @@ This tutorial teaches you how to install Terraform and write your own infrastruc
 
 ## Install Terraform
 
-To install Terraform, simply visit [Terraform.io](https://www.terraform.io/downloads.html) and download the compressed binary application executable file deliverable for your platform, machine or environment on which you like to run code and do development.
+To install Terraform, find the [appropriate package](https://www.terraform.io/downloads.html) for your system and download it as a zip archive. 
+
+Unzip the package. Terraform runs as a single binary named `terraform`. 
+
+Make sure that the `terraform` binary is available on your `PATH`. To check this, print a colon-separated list of locations in your `PATH`.
+
+```shell
+$ echo $PATH
+```
+Move the Terraform binary to one of the listed locations. This command assumes that the binary is currently in your downloads folder and that your `PATH` includes `/usr/local/bin`, but you can customize it if your locations are different.
+
+```shell
+$ mv ~/Downloads/terraform /usr/local/bin/
+```
+Verify that the installation worked by opening a new terminal session and listing Terraform's available subcommands.
+
+```shell
+$ terraform -help
+Usage: terraform [global options] <subcommand> [args]
+
+The available commands for execution are listed below.
+The primary workflow commands are given first, followed by
+less common or more advanced commands.
+
+##...
+```
 
 ## Build infrastructure
 
